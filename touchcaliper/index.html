@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TouchCaliper — 画面に当てて測る実寸ものさし・ノギス</title>
+<meta name="description" content="iPhoneの画面に実寸（ミリ）の定規グリッドを描き、画面に乗せた小物を2本のバーで挟んで測るデジタル・ノギス。完全オフライン・データ収集なし。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  .en{margin-top:8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="TouchCaliper">
+    <h1>TouchCaliper</h1>
+    <div class="tag">画面に当てて、その場で測る。<br>指で挟むデジタル・ノギス。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>TouchCaliper は、iPhone の画面に<strong>実寸（ミリメートル）の定規グリッド</strong>を描き、画面に乗せた小物を <strong>2 本のバーで挟んで</strong>サイズを測るアプリです。ネジ・ボタン・電池・SD カード・付箋など、身のまわりの小物を 0.1mm 単位でサッと測れます。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">実寸 mm グリッド</div><div class="d">縦・横のミリ目盛りを画面に描画</div></div>
+      <div class="card"><div class="t">0.1mm 単位の表示</div><div class="d">cm・inch も同時に表示</div></div>
+      <div class="card"><div class="t">横も縦も測れる</div><div class="d">幅・高さをワンタップで切替</div></div>
+      <div class="card"><div class="t">1 秒で較正</div><div class="d">カードや硬貨を基準に微調整</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>「測る」をタップ</li>
+      <li>測りたい物を画面に乗せる</li>
+      <li>2 本のバーを物の両端に合わせて、中央の数字を読む</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>測定・グリッド・較正の基本機能は<strong>ずっと無料</strong>です。買い切りの <strong>Pro</strong> で「結果の画像共有・保存」と「測定履歴」が使えます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、較正値・測定履歴・設定は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">TouchCaliper</h1>
+    <div class="tag">Lay it on the screen and measure — a caliper at your fingertips.</div>
+  </header>
+  <section class="en">
+    <p>TouchCaliper turns your iPhone screen into a <strong>real-size millimetre ruler</strong>. Lay a small object on the screen and pinch it between the <strong>two bars</strong> to measure it to 0.1&nbsp;mm — great for screws, buttons, batteries, SD cards and more.</p>
+    <h3>Highlights</h3>
+    <div class="grid">
+      <div class="card"><div class="t">Real-size mm grid</div><div class="d">Horizontal &amp; vertical ticks</div></div>
+      <div class="card"><div class="t">0.1 mm readout</div><div class="d">cm / inch shown too</div></div>
+      <div class="card"><div class="t">Width &amp; height</div><div class="d">Switch in one tap</div></div>
+      <div class="card"><div class="t">Calibrate in a tap</div><div class="d">Use a card or coin</div></div>
+    </div>
+    <h3>Pricing</h3>
+    <p>Measuring, the grid and calibration are always free. A one-time <strong>Pro</strong> unlock adds image sharing and measurement history.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 山本周平 (shuheilocale)</div>
+  </footer>
+</div>
+</body>
+</html>
