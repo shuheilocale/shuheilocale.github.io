@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColorOverlay — 店の照明にだまされない、本当の色。</title>
+<meta name="description" content="服やコスメの本当の色を、店の照明に惑わされずチェック。iPhoneの画面が正確なカラーシートに。パーソナルカラー（イエベ・ブルベ）の色合わせにも。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#E24F67; --line:rgba(226,79,103,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F7ECE7);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(226,79,103,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+  .price{display:grid;gap:14px}
+  .price .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+  .price .plan .t{font-weight:800}
+  .price .plan ul{margin:8px 0 0 18px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="ColorOverlay">
+    <h1>ColorOverlay</h1>
+    <div class="tag">店の照明にだまされない、本当の色。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>お店のオレンジ色の照明の下では、服やコスメの本当の色を肉眼で正しく判断するのは至難の業です。ColorOverlay は、iPhoneの画面そのものを高輝度・広色域（Display P3）の「正確なカラーシート」に変えるアプリ。服やコスメを画面に直接乗せれば、店舗の照明に邪魔されず、実物の本当の色をそのまま確認できます。さらに、色を顔にかざせばパーソナルカラー（イエベ・ブルベ）の似合う色さがしにも。完全オフライン・登録不要で動作します。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">本当の色がわかる</div><div class="d">店の照明を遮断し、服・コスメの実物の色をその場でチェック</div></div>
+      <div class="card"><div class="t">AB比較</div><div class="d">2色を瞬時に切り替えて、ぴったりの一致を探せる</div></div>
+      <div class="card"><div class="t">似合う色さがし</div><div class="d">顔にかざしてイエベ・ブルベの肌うつりを見比べ</div></div>
+      <div class="card"><div class="t">安心設計</div><div class="d">完全オフライン・登録不要・広告なし</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>4シーズンのパレットから色を選ぶ</li>
+      <li>画面に全画面で照射（自動で最大輝度に）</li>
+      <li>服・コスメを画面に乗せて、本当の色を見比べる</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <div class="price">
+      <div class="plan"><div class="t">無料</div>
+        <ul><li>イエベ春／ブルベ夏の2シーズン</li><li>連続発光は30秒まで</li><li>プリセット2色のAB比較</li></ul>
+      </div>
+      <div class="plan"><div class="t">ColorOverlay Pro（買い切り）</div>
+        <ul><li>4シーズン全カラー＋カスタムHEX入力</li><li>時間無制限の連続発光</li><li>お気に入りを最大20色まで保存</li><li>好きな2色を自由に選んでAB比較</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、お気に入り等のデータは端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">ColorOverlay</h1>
+    <div class="tag">See the true color — don't let store lighting fool you.</div>
+  </header>
+  <section>
+    <p>Under a store's warm orange lighting, it's nearly impossible to judge the true color of clothes and cosmetics. ColorOverlay turns your iPhone screen itself into an accurate, wide-gamut (Display P3) color sheet. Lay an item directly on the screen and it blocks ambient-light noise, so you see the real color of the actual product. You can also find your own colors (personal color / warm vs. cool) by holding a color up to your face. Fully offline, no sign-in.</p>
+    <h3>Highlights</h3>
+    <p>See true colors free of store lighting · A/B compare two colors instantly · Find your colors (warm/cool) · Fully offline, no account, no ads.</p>
+    <h3>Pricing</h3>
+    <p>Free: 2 seasons, up to 30s emission, preset A/B compare. ColorOverlay Pro (one-time): all four seasons + custom HEX, unlimited emission, up to 20 favorites, free 2-color A/B compare.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
