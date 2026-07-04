@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoodTap — 開かず1タップ、気分を記録。</title>
+<meta name="description" content="開かず1タップ、気分を記録。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="MoodTap">
+    <h1>MoodTap</h1>
+    <div class="tag">開かず1タップ、気分を記録。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>気分記録アプリ、続きませんでしたか？ 挫折の理由は意志の弱さではなく、「アプリを開いて、選んで、書く」という毎回の手間です。</p>
+    <p style="margin-top:10px">ムードタップは、ホーム画面のウィジェットから1タップで気分を記録できるアプリです。アプリを開く必要はありません。気分がふと動いたその瞬間に、2秒で記録が終わります。積み重なった記録から、何があなたの気分を動かすのかに少しずつ気づいていけます。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">ホーム画面から1タップ記録</div><div class="d">アプリを開かず、ウィジェットをタップするだけで記録完了</div></div>
+      <div class="card"><div class="t">5段階＋任意のタグ</div><div class="d">気分は5段階でシンプルに。「よく眠れた」「運動した」などのタグは記録後に自由に追記</div></div>
+      <div class="card"><div class="t">直近7日間の気分グラフ</div><div class="d">積み重なった記録を、グラフでやさしく振り返り</div></div>
+      <div class="card"><div class="t">途切れても責めない設計</div><div class="d">記録がない日があっても大丈夫。空白を赤く塗らない、催促通知もなし</div></div>
+      <div class="card"><div class="t">完全オフライン・アカウント不要</div><div class="d">データは端末内にのみ保存。通信もアカウント登録も不要です</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>アプリを開いて、一度だけ気分の記録を体験する</li>
+      <li>ホーム画面にウィジェットを追加する</li>
+      <li>あとはホーム画面から1タップで記録するだけ</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>基本機能（記録・グラフ・タグ）はすべて<strong>無料</strong>で、記録は無制限に使えます。</p>
+    <p style="margin-top:10px">Pro（<strong>¥1,200・買い切り</strong>、月額課金なし）にすると、以下が使えます。</p>
+    <div class="grid" style="margin-top:12px">
+      <div class="card"><div class="t">相関インサイト</div><div class="d">タグごとに気分への影響を分析。何があなたの気分を動かすかが見えます</div></div>
+      <div class="card"><div class="t">1日・曜日のリズム分析</div><div class="d">時間帯・曜日ごとの気分の傾向を可視化</div></div>
+      <div class="card"><div class="t">全期間の気分グラフ</div><div class="d">7日間の枠を超えて、記録のすべてを振り返り</div></div>
+      <div class="card"><div class="t">月次レポート</div><div class="d">今月のふりかえりをレポートで確認</div></div>
+      <div class="card"><div class="t">カスタムタグ無制限</div><div class="d">自分だけのタグを好きなだけ追加</div></div>
+      <div class="card"><div class="t">CSVエクスポート</div><div class="d">記録をCSV形式で書き出し</div></div>
+    </div>
+    <p style="margin-top:10px">一度の購入でずっと使えます。月額のサブスクリプションはありません。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">MoodTap</h1>
+    <div class="tag">Log your mood in one tap - without opening the app.</div>
+  </header>
+  <section>
+    <p>Ever start a mood-journaling app and stop within two weeks? The problem was never willpower — it's the friction of opening the app, picking an entry, and writing something every single time.</p>
+    <p style="margin-top:10px">MoodTap lets you log your mood in one tap from a home-screen widget — no need to open the app at all. The moment your mood shifts, logging it takes two seconds. Over time, the entries add up into a picture of what actually moves your mood.</p>
+
+    <h3>Highlights</h3>
+    <ul style="margin:8px 0 8px 22px">
+      <li>Log in one tap from the home-screen widget — no app launch required</li>
+      <li>A simple 5-point mood scale, with optional tags added afterward</li>
+      <li>A 7-day mood graph</li>
+      <li>Designed to never guilt you — missed days aren't punished, no nagging reminders</li>
+      <li>Fully offline, no account required</li>
+    </ul>
+
+    <h3>How it works</h3>
+    <ol style="margin:8px 0 8px 22px">
+      <li>Try logging a mood once inside the app</li>
+      <li>Add the widget to your home screen</li>
+      <li>From then on, just one tap</li>
+    </ol>
+
+    <h3>Pricing</h3>
+    <p>The core app (logging, graph, tags) is free, with unlimited entries.</p>
+    <p style="margin-top:6px">Pro (<strong>a one-time ¥1,200 purchase, no subscription</strong>) unlocks correlation insights (which tags move your mood), time-of-day and day-of-week rhythm analysis, the full-history graph, monthly reports, unlimited custom tags, and CSV export.</p>
+
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <div class="note">本アプリは医療機器ではなく、診断・治療を目的としたものではありません。つらい状態が続く場合は専門家にご相談ください。<br>This app is not a medical device and is not intended to diagnose or treat any condition. If symptoms persist, please consult a professional.</div>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <!-- TODO: 販売者名義に差し替え -->
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
