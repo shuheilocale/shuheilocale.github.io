@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenpinto — 画面の光で、カードの傷が見える。</title>
+<meta name="description" content="画面の光で、カードの傷が見える。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="トレカ検品灯">
+    <h1>トレカ検品灯</h1>
+    <div class="tag">画面の光で、カードの傷が見える。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>トレカ検品灯は、iPhoneの画面そのものを高輝度の縞ライトに変える、トレーディングカード専用の検品ライトです。カードを画面にかざしてゆっくり傾けるだけで、表面のスレ・擦り傷・白かけ・凹みが、反射した縞の「うねり」として肉眼で見えやすくなります。グレーディング提出前・フリマ出品前・購入時のセルフチェックに。</p>
+    <p class="note">本アプリは観察を補助するライトであり、カードの真贋やグレードを判定・保証するものではありません。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">縞ライトで傷を可視化</div><div class="d">かざして傾けるだけで、肉眼で見えなかったスレ・白かけ・凹みが浮かび上がります。</div></div>
+      <div class="card"><div class="t">権限ゼロ・完全オフライン</div><div class="d">カメラ・マイク・位置情報は一切不要。カードの画像が送信されることはありません。</div></div>
+      <div class="card"><div class="t">自由な縞調整（無料）</div><div class="d">太さ1〜5px・縦横切替・反転・微速オートドリフト・片手ロック。</div></div>
+      <div class="card"><div class="t">センタリングゲージ（Pro）</div><div class="d">ゲーム別の実寸枠と、上下・左右のズレ比率を数値で表示します。</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>検品灯をつける（画面が最大輝度の縞ライトになります）</li>
+      <li>カードをかざす（スリーブ越し推奨・暗めの環境が見やすい）</li>
+      <li>ゆっくり傾ける — 見えなかった傷が浮かび上がります</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>基本の縞ライト（傷・スレの観察）は<strong>無料</strong>です。<strong>Pro（買い切り・追加課金なし）</strong>で、R/G/B・RGBチャンネル光と、実寸センタリングゲージ（ズレ比率の数値表示）が解放されます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">Toreka Kenpin-tō</h1>
+    <div class="tag">See hidden card flaws with your screen's light.</div>
+  </header>
+  <section>
+    <p>Turn your iPhone screen into a high-brightness striped light for inspecting trading cards. Hold a card to the screen and tilt it slowly — scuffs, whitening, and dents on the surface stand out in the reflected stripes. It is an observation aid only; it does not judge or guarantee a card's authenticity or grade.</p>
+    <h3>Pricing</h3>
+    <p>The basic striped light is free. A one-time Pro purchase (no subscriptions) unlocks R/G/B and RGB channel light and a real-size centering gauge.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <!-- TODO: 販売者名義に差し替え -->
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
