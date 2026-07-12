@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpokeTune — 弾いた音で張力バランスをレーダー可視化</title>
+<meta name="description" content="弾いた音で張力バランスをレーダー可視化">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="SpokeTune">
+    <h1>SpokeTune</h1>
+    <div class="tag">弾いた音で張力バランスをレーダー可視化</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>ホイールのスポークをピックなどで弾くと、その音の高さ（周波数）からホイール全体の張力バランスをその場でレーダーチャートに可視化する、自転車整備向けの計測アプリです。物理テンションメーターを持っていなくても、iPhoneのマイクだけで「どのスポークが緩んでいるか」を一目で特定できます。</p>
+    <p style="margin-top:10px">よく組まれたホイールはレーダーがきれいな円になり、緩みがあるスポークはそこだけ内側に凹んで表示されます。締め直して再測定すれば、凹みが解消したことをその場で確認できます。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">無制限の測定</div><div class="d">前輪・後輪、何本のホイールでも回数無制限。締めては測る反復にすべて無料で使えます</div></div>
+      <div class="card"><div class="t">ホイール型レーダー</div><div class="d">スポークを弾くたびにウェッジが1つずつ確定し、張力バランスの偏りを円グラフで可視化</div></div>
+      <div class="card"><div class="t">バランススコア</div><div class="d">100点満点のスコアと要調整スポーク数をその場でサマリー表示</div></div>
+      <div class="card"><div class="t">左右自動グルーピング</div><div class="d">バルブ位置から交互に左右を自動判定し、側内での相対バランスを比較（前輪の非対称にも対応）</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>ホイールを設定する — スポーク本数（16〜40本）と前輪／後輪を選びます</li>
+      <li>バルブ穴の隣から時計回りに、スポークを1本ずつピックなどで弾いていきます</li>
+      <li>一周し終えると完成したレーダーで緩んでいる1本がひと目でわかります</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="t">無料</div>
+        <div class="d">全ホイールの測定・再測定が無制限。レーダー可視化とバランススコアもすべて無料で使えます。</div>
+      </div>
+      <div class="card">
+        <div class="t">Pro（¥1,200・買い切り）</div>
+        <div class="d">緩んだスポークの修正処方（締める／緩める方向と目安量）、推定Kgf換算、測定履歴の保存を解除します。</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:14px">Proはサブスクリプションではなく一回払いの買い切り（非消耗型）です。価格はApp内表示が正となります。</p>
+  </section>
+
+  <section>
+    <h2>ご利用にあたっての注意</h2>
+    <div class="note">
+      <p>・本アプリはスポークの<strong>張力バランス</strong>を測定するもので、リムの振れ（横振れ・縦振れ）自体は測定しません。振れ取りの前段としての張力の均しにご利用ください。</p>
+      <p style="margin-top:8px">・Kgf（張力）表示は音の周波数からの<strong>推定値</strong>です。物理テンションメーターと同等の絶対精度を保証するものではありません。</p>
+      <p style="margin-top:8px">・本アプリは完全オフラインで動作し、録音の保存・送信は一切行いません。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">SpokeTune</h1>
+    <div class="tag">Visualize spoke tension balance by sound</div>
+  </header>
+  <section>
+    <p>Pluck a spoke and SpokeTune turns the pitch into a wheel-shaped radar chart of tension balance, in real time, using only your iPhone's microphone — no physical tension meter required. A loose spoke shows up as a dent in the radar so you can spot which one to tighten.</p>
+    <h3>Features</h3>
+    <p>Unlimited measurements for any wheel (free) · radar visualization &amp; balance score (free) · Pro (one-time ¥1,200): tightening guidance, estimated Kgf conversion, and measurement history.</p>
+    <h3>Note</h3>
+    <p>SpokeTune measures spoke tension balance only — it does not measure rim runout (lateral/radial wobble). Kgf values are estimates, not a substitute for a physical tension meter.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <!-- TODO: 販売者名義に差し替え -->
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
