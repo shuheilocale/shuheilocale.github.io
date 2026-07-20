@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mihari — スマホを、自分専用の見張り番に。</title>
+<meta name="description" content="スマホを、自分専用の見張り番に。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="Mihari">
+    <h1>Mihari</h1>
+    <div class="tag">スマホを、自分専用の見張り番に。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>「スマホ見張り」は、スマホを<strong>「自分専用の試験監督」</strong>に変える勉強集中タイマーです。机に立てたiPhoneのフロントカメラが、集中セッション中のあなたの視線だけをそっと見張ります。教科書やノートに向かっている間は集中時間が静かに積み上がり、スマホをチラ見した瞬間——画面が真っ赤になり、振動でバレます。「スマホを見なかった時間」がそのまま記録になる、逆転の発想の集中タイマーです。</p>
+    <p style="margin-top:10px;color:var(--muted);font-size:14px">対応機種：Face ID搭載のiPhone（視線の判定にTrueDepthカメラを使用します）</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">視線でバレる集中タイマー</div><div class="d">画面に視線が戻った瞬間、赤い警告と振動でバレます</div></div>
+      <div class="card"><div class="t">暗転して集中を守る</div><div class="d">画面が自動で暗くなり、電池の消費と誘惑の光を同時にカット</div></div>
+      <div class="card"><div class="t">セッション無制限</div><div class="d">毎日何度でも、すべて無料で使えます</div></div>
+      <div class="card"><div class="t">その場でわかるサマリー</div><div class="d">集中時間・チラ見回数・最長無中断をセッションごとに確認</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>スマホをスタンドや本に立てかけて、顔が映る位置に置く</li>
+      <li>「集中を始める」をタップする</li>
+      <li>あとは教科書やノートに集中するだけ。スマホを見たら、バレます</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>集中セッション（回数無制限）とその日の結果表示は<strong>無料</strong>です。買い切りの<strong>Proアップグレード</strong>で、全履歴・週/月の合計・連続日数ストリーク・誘惑ヒートマップ（弱点時間帯の可視化）・勉強記録の共有/書き出しが解放されます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。カメラの映像は、集中セッション中に視線が画面に向いているかを判定する目的だけに使い、すべて端末内で処理します。録画・保存・外部送信は一切なく、完全オフラインで動作します。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">Mihari</h1>
+    <div class="tag">Turn your phone into your own invigilator.</div>
+  </header>
+  <section>
+    <p>Mihari turns your phone into your own exam proctor for study sessions. Prop your iPhone's front camera on your desk, and during a focus session it quietly watches only your gaze. While you're looking at your textbook, your focus time keeps quietly building up — the moment you glance at your phone, the screen flashes red and buzzes. It's a focus timer built on a reversal: what gets recorded is the time you didn't look at your phone.</p>
+    <p style="margin-top:8px;color:var(--muted);font-size:14px">Requires an iPhone with Face ID (uses the TrueDepth camera for gaze detection).</p>
+    <h3>Highlights</h3>
+    <p>A timer that catches you looking · The screen dims to cut battery use and temptation · Unlimited free sessions every day · An instant summary of focus time, glances, and your longest streak.</p>
+    <h3>Pricing</h3>
+    <p>Focus sessions (unlimited) and same-day results are free. A one-time <strong>Pro upgrade</strong> unlocks full history, weekly/monthly totals, streaks, a temptation heatmap of your weak hours, and sharing/export of your study record.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data. Camera video is used only on-device to detect whether your gaze is on the screen during a focus session — it is never recorded, saved, or transmitted. The app works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <!-- TODO: 販売者名義に差し替え -->
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
