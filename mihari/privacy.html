@@ -32,7 +32,7 @@
 <div class="wrap">
   <a class="back" href="index.html">← Mihari</a>
   <h1>プライバシーポリシー / Privacy Policy</h1>
-  <div class="upd">最終更新 / Last updated: 2026-07-20</div>
+  <div class="upd">最終更新 / Last updated: 2026-07-23</div>
 
   <!-- NOTE: この雛形は「データ収集なし・完全オフライン」のアプリ向け。
        ネットワーク通信・解析・アカウント等を追加したらここを必ず実態に合わせて更新すること。 -->
@@ -48,6 +48,18 @@
       <li>集中セッション中、フロントカメラの映像は「視線が画面に向いているか」の判定にのみ使用します。すべて端末内（オンデバイス）で処理し、<strong>録画・保存・外部への送信は一切行いません</strong>。</li>
       <li>各種設定・セッション記録は、すべて<strong>お使いの端末内のみ</strong>に保存され、外部に送信されることはありません。</li>
       <li>解析（アナリティクス）・広告・トラッキング・第三者SDKは使用していません。</li>
+    </ul>
+
+    <h3>顔データ（TrueDepth API / カメラ）の取り扱い</h3>
+    <p>本アプリは、集中セッション中のみ、フロントカメラと顔検出機能を使用します。Face ID 対応端末では ARKit の顔追跡（TrueDepth API）を、非対応端末では通常のフロントカメラによる顔検出を使用します。</p>
+    <ul>
+      <li><strong>何を取得するか</strong>: 顔の位置・向き、および視線の方向。これらは「利用者の視線が画面に向いているか」という<strong>1つの真偽値を導き出すためだけ</strong>に使用します。</li>
+      <li><strong>利用目的</strong>: 集中セッション中に、利用者が自分のスマートフォンを見たかどうかを判定し、集中時間の加算と警告表示を行うため。それ以外の目的には一切使用しません。</li>
+      <li><strong>保存しません</strong>: 顔データ（顔画像・深度データ・顔メッシュ・顔の特徴点を含む）は、<strong>一切保存しません</strong>。各フレームの処理は端末内のメモリ上で即時に行われ、判定後ただちに破棄されます。端末内にもサーバーにも保存されることはありません。</li>
+      <li><strong>送信・共有しません</strong>: 顔データを本アプリの外部へ送信することはなく、第三者（解析事業者・広告事業者を含む）と共有・販売することもありません。本アプリはネットワーク通信を一切行いません。</li>
+      <li><strong>保持期間</strong>: 顔データの保持期間はありません（保存しないため）。端末に保存されるのはセッションの集中時間・回数・時刻などの数値記録のみで、顔に関する情報は含まれません。</li>
+      <li><strong>本人確認には使用しません</strong>: 個人の識別・認証・生体認証には使用しません。</li>
+      <li><strong>削除方法</strong>: 保存された記録（顔データを含みません）は、本アプリを端末から削除することですべて消去されます。</li>
     </ul>
 
     <h3>App 内課金</h3>
@@ -69,6 +81,18 @@
       <li>During a focus session, the front camera image is used only to detect whether your gaze is on the screen. All processing happens on-device — video is <strong>never recorded, saved, or transmitted anywhere</strong>.</li>
       <li>All settings and session records are stored <strong>only on your device</strong> and are never sent anywhere.</li>
       <li>We use no analytics, advertising, tracking, or third-party SDKs.</li>
+    </ul>
+
+    <h3>Face data (TrueDepth API / camera)</h3>
+    <p>The App uses the front camera and face detection only while a focus session is running. On Face ID devices it uses ARKit face tracking (the TrueDepth API); on other devices it uses ordinary front-camera face detection.</p>
+    <ul>
+      <li><strong>What is collected</strong>: the position and orientation of your face and the direction of your gaze, used <strong>solely to derive a single true/false value</strong> — whether you are looking at the screen.</li>
+      <li><strong>Purpose</strong>: to determine, during a focus session, whether you looked at your own phone, so the App can accrue focus time and show a warning. It is used for no other purpose.</li>
+      <li><strong>Not stored</strong>: face data — including face images, depth data, face meshes and facial landmarks — is <strong>never stored</strong>. Each frame is processed in memory on the device in real time and discarded immediately after the true/false value is derived. It is never written to the device or to any server.</li>
+      <li><strong>Not transmitted or shared</strong>: face data never leaves the App, and is never shared with or sold to any third party (including analytics or advertising providers). The App performs no network communication at all.</li>
+      <li><strong>Retention</strong>: there is no retention period for face data, because none is retained. The only records stored on your device are numeric session records (focus duration, counts, timestamps); they contain no face-related information.</li>
+      <li><strong>Not used for identification</strong>: face data is never used to identify or authenticate any person, and is not used for biometric authentication.</li>
+      <li><strong>Deletion</strong>: the stored session records (which contain no face data) are removed entirely by deleting the App from your device.</li>
     </ul>
 
     <h3>In-app purchases</h3>
