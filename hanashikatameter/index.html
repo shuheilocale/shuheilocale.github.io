@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プレゼン練習 - 話し方メーター — スピーチの話速・フィラー・間を解析</title>
+<meta name="description" content="練習スピーチを録音するだけで、話す速さ・フィラー（えー、あの）・間を数字で診断。完全オンデバイスのプレゼン練習アプリ。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="プレゼン練習 - 話し方メーター">
+    <h1>プレゼン練習 - 話し方メーター</h1>
+    <div class="tag">スピーチの話速・フィラー・間を解析</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>「話し方メーター」は、プレゼン・登壇・ウェビナー・営業デモの練習スピーチを録音して、話す速さ（話速）・フィラー（えー、あの、えっと などの口ぐせ）・間（ま）を数字で確認できる練習アプリです。録音を止めた瞬間に、話し方の型判定（例：焦り型）と3つのスコア（話速・フィラー・間）を表示します。</p>
+    <p style="margin-top:10px">「早口かもしれない」「えー が多い気がする」と薄々感じている人が、自分の話し方を初めて客観的な数字で見るための「話し方の鏡」です。録音と解析はすべて端末内で完結し、音声が端末の外に出ることはありません。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">リアルタイム色付き波形</div><div class="d">色＝話す速さ、光るドット＝フィラー、切れ目＝間。録音中は数値を出さず、話すことに集中できます</div></div>
+      <div class="card"><div class="t">停止した瞬間に型判定＋3スコア</div><div class="d">話速（文字/分・目標レンジ併記）・フィラー（回/分）・間を採点し、話し方の型を判定します</div></div>
+      <div class="card"><div class="t">改善ドリルとタイムライン（Pro）</div><div class="d">どこで「えー」と言ったかを聞き返し、型に合わせた具体的な練習処方を提示。履歴・トレンドやPDF書き出しも</div></div>
+      <div class="card"><div class="t">完全オンデバイス</div><div class="d">録音・解析はすべて端末内。音声の外部送信なし、アカウント登録も不要です</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>「開始」をタップして、いつもの調子で練習スピーチを話す（まずは90秒）</li>
+      <li>録音中は色付き波形が話速・フィラー・間をそのまま映します</li>
+      <li>停止すると型判定と3スコアが表示。数字を見て、次の練習で直す一点を決める</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>録音・リアルタイム波形・録音後の型判定＋3スコア（1回90秒まで）は<strong>無料</strong>でご利用いただけます。買い切りの <strong>Pro</strong>（App内課金・サブスクリプションなし）では、フィラータイムラインと聞き返し・改善ドリル・語ラベル（対応端末）・履歴とトレンド・テキスト/PDF書き出し・無制限録音が解放されます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。録音した音声と解析結果は<strong>端末内にのみ</strong>保存され、外部に送信されることはありません。ご意見・ご要望は任意のお問い合わせフォーム（Google フォーム）経由でのみ受け付けます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">HanashikataMeter</h1>
+    <div class="tag">Visualize your speaking pace, fillers, and pauses.</div>
+  </header>
+  <section>
+    <p>HanashikataMeter is a Japanese-language presentation-practice app. Record a practice speech and it instantly scores your speaking pace, filler words (“eh”, “ano”), and pauses — a mirror for how you actually sound. A colored live waveform shows pace and fillers while you speak; stopping the recording reveals your speaking-style diagnosis and three scores. Pro (one-time in-app purchase) unlocks the filler timeline with playback, tailored improvement drills, history &amp; trends, text/PDF export, and unlimited recording length.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data. Recording and analysis happen entirely on your device; audio never leaves it. Feedback is accepted only through the optional contact form below. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 Shuhei Yamamoto</div>
+  </footer>
+</div>
+</body>
+</html>
