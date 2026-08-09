@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>光量ノート（KoryoNote）— 置き場所の明るさを測って、植物に足りているか判定</title>
+<meta name="description" content="iPhoneを置くだけ3秒。窓際や棚の明るさ（lx）を測って、モンステラやアガベなど植物ごとに光が足りているか判定します。Proで積算光量ロギング・PPFD換算にも対応。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="光量ノート">
+    <h1>光量ノート</h1>
+    <div class="tag">植物の置き場所と窓際の明るさをルクス測定</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>人の目は明るさに対して対数的に順応するため、300lxの部屋も3,000lxの部屋も同じ「明るい部屋」に見えてしまいます。光量ノートは、iPhoneを置き場所に置くだけで3秒ほどでその場所の明るさ（lx）を測り、モンステラ・ポトス・サンスベリア・アガベなど植物ごとに光が「不足／適正／過剰」かを判定するアプリです。判定までは無料。Proでは積算光量のロギングや複数地点の比較、PPFD換算にも対応します。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">置くだけ3秒で判定</div><div class="d">画面を上にして置くだけ。明るさクラスと植物ごとの合否がすぐ出ます</div></div>
+      <div class="card"><div class="t">用途に合わせて目標が切替</div><div class="d">植物・作業チップをスライドすると、その場で目標の明るさ帯が変わります</div></div>
+      <div class="card"><div class="t">光源プリセット補正</div><div class="d">太陽光／白色LED／赤青育成LED／蛍光灯に合わせて目標値を補正</div></div>
+      <div class="card"><div class="t">積算光量ロギング（Pro）</div><div class="d">記録時間ぶんのlux·hを積算。朝昼夕3点から1日の積算光量とDLI目安も</div></div>
+      <div class="card"><div class="t">地点の保存・比較（Pro）</div><div class="d">窓際と棚下段など複数地点を名前を付けて記録し、2地点を比較</div></div>
+      <div class="card"><div class="t">PPFD換算・較正保存（Pro）</div><div class="d">光源ごとの係数でPPFDの目安を表示。既知の明るさで1点較正も保存可能</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>植物を置きたい場所・窓際に立ち、iPhoneの画面を上にして水平に置きます</li>
+      <li>3秒ほどで明るさ（lx）と明るさクラスが表示されます。用途チップで植物を選ぶと合否も分かります</li>
+      <li>足りない場合は、光源を近づける・窓際に移すなど次の一手を確認します（詳しい処方や記録はPro）</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>価格</h2>
+    <p>ライブ測定・明るさクラス・植物ごとの合否判定・光源プリセット・拡散板モード・直近履歴3件は<strong>無料</strong>でお使いいただけます。処方カード、積算ロギングと1日積算推定、地点の無制限保存・比較、PPFD換算、較正の保存は<strong>Pro（¥800・買い切り）</strong>で解放されます。サブスクリプションではなく、一度のお支払いで恒久的にご利用いただけます。</p>
+  </section>
+
+  <section>
+    <h2>精度についての注記</h2>
+    <div class="note">光量ノートは、iPhoneカメラの露出情報から明るさを推定する<strong>目安</strong>のアプリです。業務用の照度計・測定機器の代替にはなりません。置き場所どうしの相対比較や、大まかな傾向をつかむための道具としてお使いください。</div>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">Koryo Note (光量ノート)</h1>
+    <div class="tag">Measure the light where you keep your houseplants — is it actually enough?</div>
+  </header>
+  <section>
+    <p>Human eyes adapt logarithmically to brightness, so a 300lx room and a 3,000lx room can look equally "bright." Koryo Note turns your iPhone into a quick light check: set it down where a plant lives, and in about 3 seconds it reads the brightness (lux) and tells you whether it's enough, too little, or too much for that plant — monstera, pothos, snake plant, agave, and more. Judgment is free. Pro (¥800, one-time — not a subscription) adds cumulative-light logging, multi-spot comparison, and PPFD conversion.</p>
+    <h3>Note on accuracy</h3>
+    <p>Koryo Note estimates brightness from the iPhone camera's exposure data — it's an <strong>estimate</strong>, not a substitute for a professional light meter. Use it for relative comparisons between spots, not lab-grade measurement.</p>
+    <h3>App language</h3>
+    <p>The app interface is Japanese only.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
