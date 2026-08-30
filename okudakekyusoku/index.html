@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OkudakeKyusoku — 置いて、投げるだけ。ミット音で球速を自動で読み上げ。</title>
+<meta name="description" content="置いて、投げるだけ。ミット音で球速を自動で読み上げ。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="OkudakeKyusoku">
+    <h1>置くだけ球速</h1>
+    <div class="tag">置いて、投げるだけ。ミット音で球速を自動で読み上げ。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>「置くだけ球速」は、iPhone を横に置いて投げるだけで、1球ごとの球速を自動で読み上げる球速測定アプリです。ミットに球が収まる「バシッ」という音で捕球を検出し、カメラの映像からボールが手を離れた瞬間を求めて球速を計算します。ボタンは押しません。</p>
+    <p>少年野球の練習で親がミットを構えながら子どもの球速を知りたいとき、部活のブルペンで1球ごとの記録を残したいとき、ネットスローや壁当てで一人で測りたいとき——投げるたびに数字が声で返ってきます。</p>
+  </section>
+
+    <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">置くだけ・タップなし</div><div class="d">捕球音をきっかけに自動で計測し、日本語で読み上げます。</div></div>
+      <div class="card"><div class="t">必ず数字が出る</div><div class="d">自動検出が外れた球も「調整」でリリースの瞬間を指1本でなぞれば数字が出ます。カメラが使えない場所では2タップの手動計測。</div></div>
+      <div class="card"><div class="t">リリース直後の速度「初速」</div><div class="d">飛行時間から求めた速度を空気抵抗で補正し、踏み出し分を引いた距離で計算します。</div></div>
+      <div class="card"><div class="t">距離プリセットは全部無料</div><div class="d">学童16m・一般18.44m・少年硬式・ソフトボール（男子/女子/小学生）・カスタム3〜30m。</div></div>
+    </div>
+  </section>
+
+    <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>距離と置き方を選びます（既定は学童 16m）。</li>
+      <li>投手と捕手の真ん中あたり、投げる腕側の横 8〜10m に iPhone を立てて置きます。</li>
+      <li>画面のチェックが緑になったら、あとは投げるだけ。捕球音の約1秒後に球速を読み上げます。</li>
+    </ol>
+  </section>
+
+    <section>
+    <h2>料金</h2>
+    <p>測定・読み上げ・全距離プリセット・調整と手動計測・直近5球の表示は<strong>無料・無制限</strong>です。</p>
+    <p><strong>Pro（買い切り）</strong>で、6球目以降の保持とセッション（練習1回分）の保存、まとめカードの共有、ポップタイム測定、選手の切り替え、週の球数・初速/平均/終速の内訳・CSV 書き出しが使えます。</p>
+    <div class="note">球速は目安です。距離や置き場所、明るさによって値は変わります。同じ条件で測った球同士の比較や練習の記録としてお使いください。</div>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">OkudakeKyusoku</h1>
+    <div class="tag">Set it down and pitch. Hands-free ball speed from the mitt pop.</div>
+  </header>
+  <section>
+    <p>Set your iPhone beside the mound and pitch. The app detects the catch from the mitt pop, finds the release moment in the camera frames, and reads the speed out loud — no taps. Measuring and read-aloud are free and unlimited; saving sessions, summary cards, pop time and multiple players are a one-time Pro purchase. The app is Japanese-only.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+        <div style="margin-top:8px">© 2026 Shuhei Yamamoto</div>
+  </footer>
+</div>
+</body>
+</html>
