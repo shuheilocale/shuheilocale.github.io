@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MotorTacho — モーターに近づけるだけ。無負荷回転数がその場でわかる。</title>
+<meta name="description" content="モーターに近づけるだけ。無負荷回転数がその場でわかる。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="MotorTacho">
+    <h1>MotorTacho</h1>
+    <div class="tag">モーターに近づけるだけ。無負荷回転数がその場でわかる。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>模型用の小型ブラシモーター（130・540サイズ）の駆動音を iPhone のマイクで拾い、その周波数から無負荷回転数（rpm）を算出する音響式の回転数計です。専用の回転計を用意しなくても、慣らし（ブレークイン）や選別のたびに回転数を確かめ、モーターごとに記録して比べられます。</p>
+    <p style="margin-top:12px">解析した回転数は、安定すると数字がロックして動かなくなります。ロックした値の最大（MAX）は針で残るので、一番回る個体がひと目でわかります。音響方式のため数値は目安です。無負荷時の測定専用で、慣らし前後や個体間の相対比較にお使いください。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">数字が止まる（ロック）</div><div class="d">回転数が安定すると数字がロックして動かなくなります。揺れ続ける値を目で追う必要はありません</div></div>
+      <div class="card"><div class="t">MAXは針で残る</div><div class="d">ロックした値の最大が追針として残るので、一番回る個体がひと目でわかります</div></div>
+      <div class="card"><div class="t">測って、記録して、比べる（台帳）</div><div class="d">モーターごとに回転数・電圧・電源・メモを記録。同じロットの個体同士や慣らし前後を並べて比較できます</div></div>
+      <div class="card"><div class="t">手持ちの回転計の値で合わせる（較正）</div><div class="d">別の回転計をお持ちなら、その値に合わせて係数を設定できます</div></div>
+      <div class="card"><div class="t">スロット係数と電圧を記録</div><div class="d">回転数の換算に使うスロット係数（3 / 5 / カスタム）と、電圧・電源種別を一緒に残せます</div></div>
+      <div class="card"><div class="t">完全オンデバイス</div><div class="d">音声は端末内で処理し、保存も送信もしません。必要な権限はマイクのみです</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>ピニオンを外し、モーターを無負荷で回す</li>
+      <li>iPhone のマイク（本体下部）をエンドベル側に 5〜10cm ほど近づける</li>
+      <li>数字がロックしたら「保存」をタップして台帳に記録する</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>ライブ回転数・ロック・MAX、スロット係数（3 / 5 / カスタム）、手持ちの回転計の値で合わせる較正、電圧の記録、モーター台帳3本までとその範囲での比較、結果の共有画像は<strong>無料</strong>でお使いいただけます。台帳4本目以降（無制限）、電圧補正（3.0V換算）での比較、慣らしの推移グラフと伸び率、CSV書き出し、ギア比・タイヤ径からの理論最高速（無負荷・目安）は<strong>Pro（¥800・買い切り）</strong>で解放されます。サブスクリプションではなく、一度のお支払いで恒久的にご利用いただけます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。測定・記録は端末内で完結し（App 内課金と外部リンクを除きネットワーク通信を行いません）、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">MotorTacho</h1>
+    <div class="tag">Hold it near the motor. The no-load RPM locks in on the spot.</div>
+  </header>
+  <section>
+    <p>MotorTacho listens to the driving sound of small brushed hobby motors (130 / 540 size) through the iPhone's microphone and calculates the unloaded RPM (rotations per minute) from its frequency. No dedicated tachometer needed — check the RPM every time you break in or sort motors, log it per motor, and compare motors side by side.</p>
+    <p style="margin-top:12px">When the reading settles, the number locks in place instead of drifting. <strong>Free</strong>: live RPM, lock, MAX hold, slot-count setting, calibration against a reference tachometer you already own, voltage logging, a 3-motor log with comparison, and a shareable result card. <strong>Pro</strong> (¥800, one-time — not a subscription) unlocks an unlimited motor log, voltage-normalized comparison, a break-in progress graph with % gain, CSV export, and an estimated top speed (unloaded, for reference only) from gear ratio and tire size.</p>
+    <h3>Note on accuracy</h3>
+    <p>MotorTacho estimates RPM acoustically — it's a reference figure, not a substitute for a calibrated instrument. It measures unloaded RPM only. Use it for relative comparisons: before/after break-in, or motor-to-motor.</p>
+    <h3>App language</h3>
+    <p>The app interface is Japanese only.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data; measurement and records stay on the device (no network communication apart from in-app purchase and the external links you open). See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
