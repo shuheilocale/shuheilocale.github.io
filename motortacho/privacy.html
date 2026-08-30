@@ -34,8 +34,6 @@
   <h1>プライバシーポリシー / Privacy Policy</h1>
   <div class="upd">最終更新 / Last updated: 2026-08-30</div>
 
-  <!-- NOTE: この雛形は「データ収集なし・完全オフライン」のアプリ向け。
-       ネットワーク通信・解析・アカウント等を追加したらここを必ず実態に合わせて更新すること。 -->
   <div class="card">
     <h2>日本語</h2>
     <p>MotorTacho（以下「本アプリ」）のプライバシーポリシーです。</p>
@@ -49,24 +47,17 @@
       <li>解析（アナリティクス）・広告・トラッキングは行いません。</li>
     </ul>
 
-    <!-- ⚠️ 顔検出（ARKit顔追跡/TrueDepth・Vision顔検出）を使うアプリは、この節を
-         必ず有効化して実態に合わせて記述すること。省くと Guideline 2.1
-         "Information Needed" で却下され、Appleから5問の質問状が来る（Mihariで実例。
-         約1日の往復を失う）。Appleは「ポリシーの該当箇所を引用せよ」と要求するので、
-         独立した見出しにして 取得内容/用途/共有/保持/削除 をすべて明記する。
-         顔検出を使わないアプリはこのコメントごと削除してよい。
-    <h3>顔データ（TrueDepth API / カメラ）の取り扱い</h3>
-    <p>本アプリは、○○の間のみ、フロントカメラと顔検出機能を使用します。</p>
+    <h3>マイク（音声）の取り扱い</h3>
+    <p>本アプリは、モーターの無負荷回転数を測定するために、計測中のみマイクを使用します。</p>
     <ul>
-      <li><strong>何を取得するか</strong>: （例）顔の位置・向き。○○を判定するためだけに使用します。</li>
-      <li><strong>利用目的</strong>: （具体的に。それ以外に使わないことを明記）</li>
-      <li><strong>保存しません</strong>: 顔データ（顔画像・深度データ・顔メッシュ・特徴点を含む）は一切保存しません。端末内メモリ上で即時処理し、直ちに破棄します。</li>
-      <li><strong>送信・共有しません</strong>: 外部送信なし。第三者と共有・販売しません。</li>
-      <li><strong>保持期間</strong>: 保存しないため保持期間はありません。端末に残るのは○○の数値記録のみです。</li>
-      <li><strong>本人確認には使用しません</strong>: 個人の識別・認証・生体認証には使用しません。</li>
-      <li><strong>削除方法</strong>: アプリを削除すれば記録はすべて消去されます。</li>
+      <li><strong>何を取得するか</strong>: 計測中に鳴っているモーターの駆動音のみを取得します。</li>
+      <li><strong>利用目的</strong>: 音の周波数を解析し、そこから無負荷回転数（RPM）を算出するためだけに使用します。</li>
+      <li><strong>保存しません</strong>: 音声は端末内のメモリ上で即時に解析し、録音ファイルとして保存することは一切ありません。</li>
+      <li><strong>送信しません</strong>: 音声データが端末の外に送信されることは一切ありません。</li>
+      <li><strong>バックグラウンドでは録音しません</strong>: マイクを使うのは本アプリが前面で計測中の間だけです。</li>
+      <li><strong>保持期間</strong>: 音声そのものを保存しないため、保持期間はありません。端末に残るのは、計測結果として算出した回転数・電圧などの数値記録のみです。</li>
+      <li><strong>削除方法</strong>: 記録した数値はアプリ内から削除できます。アプリ自体を削除すれば、台帳（記録）もすべて消去されます。</li>
     </ul>
-    -->
 
     <h3>App 内課金</h3>
     <p>App 内課金がある場合、購入処理および決済情報の取り扱いは Apple（StoreKit）が行い、本アプリが利用者の決済情報を取得・保存することはありません。</p>
@@ -86,6 +77,18 @@
       <li>Apart from in-app purchase processing by the App Store and the external links you open yourself (the contact form and the App Store review page), the App itself performs no network communication; measurement and records stay on the device.</li>
       <li>All settings and data are stored <strong>only on your device</strong> and are never sent anywhere.</li>
       <li>We use no analytics, advertising or tracking.</li>
+    </ul>
+
+    <h3>Microphone (audio)</h3>
+    <p>The App uses the microphone only while measuring, to determine a motor's no-load rpm.</p>
+    <ul>
+      <li><strong>What it captures</strong>: only the sound of the motor running while a measurement is in progress.</li>
+      <li><strong>Purpose</strong>: the audio's frequency is analysed to calculate the no-load rotation speed (RPM); it is used for no other purpose.</li>
+      <li><strong>Not saved</strong>: audio is analysed in memory on the device and is never saved as a recording/audio file.</li>
+      <li><strong>Not transmitted</strong>: audio data is never sent off the device.</li>
+      <li><strong>No background recording</strong>: the microphone is only active while the App is in the foreground and actively measuring.</li>
+      <li><strong>Retention</strong>: since the audio itself is never stored, there is no retention period. Only the resulting numeric record (rpm, voltage, etc.) remains on the device.</li>
+      <li><strong>Deletion</strong>: recorded measurements can be deleted from within the App; deleting the App removes the entire ledger.</li>
     </ul>
 
     <h3>In-app purchases</h3>
