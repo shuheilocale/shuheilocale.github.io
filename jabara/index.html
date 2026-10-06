@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jabara — 開いて、閉じて、鳴らす。</title>
+<meta name="description" content="開いて、閉じて、鳴らす。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="Jabara">
+    <h1>Jabara</h1>
+    <div class="tag">開いて、閉じて、鳴らす。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>ジャバラは、折りたたみスマホの「折り目」をコンサーティーナの蛇腹に変える楽器アプリです。開いた本体を本のように両手で持ち、親指で音と和音のボタンを押しながら閉じて、開く。速く動かすほど大きく明るく鳴り、止めると本物の蛇腹のように空気が抜けて音が消えます。</p>
+    <p>iPhone Duo ではヒンジの角度がそのまま蛇腹になります。ほかの iPhone や iPad では、画面左の蛇腹ストリップを上下にドラッグして同じ楽器を演奏できます。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">ヒンジが蛇腹</div><div class="d">開く＝引き、閉じる＝押し。速さが音量、反転で音が窪む</div></div>
+      <div class="card"><div class="t">両親指で演奏</div><div class="d">右手にメロディ 10 鍵、左手に五度圏順の和音ボタン</div></div>
+      <div class="card"><div class="t">本物のリードの音</div><div class="d">サンプルではなくリアルタイム合成。空気圧で音色が変わる</div></div>
+      <div class="card"><div class="t">1 分で 1 曲</div><div class="d">光るボタンを追う曲ガイド。録音して聴き返せる</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>開いた本体を本のように両手で持つ（折りたたみでない iPhone では縦持ち）</li>
+      <li>親指でボタンを押したまま、本体を閉じる・開く（または画面左の蛇腹をドラッグ）</li>
+      <li>曲ガイドを開き、光るボタンを順に押す</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>楽器そのもの（ヒンジ演奏・メロディ 10 鍵・和音 4 つ・曲ガイド 3 曲・録音）は<strong>無料</strong>で、時間制限もありません。<strong>ジャバラ Pro</strong>（買い切り）で、全 10 和音と 7th・♯シフト・音色 3 種・全 8 曲・12 キーへの移調・録音の共有が解放されます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を一切<strong>収集・送信しません</strong>。完全オフラインで動作し、設定等は端末内にのみ保存されます。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">Jabara</h1>
+    <div class="tag">Open it. Close it. Play it.</div>
+  </header>
+  <section>
+    <p>Jabara turns the fold of a folding phone into the bellows of a concertina. Hold the open phone like a book, press the note and chord buttons with your thumbs, and close and open it: the faster you move, the louder and brighter the reeds sound. On iPhone Duo the hinge angle is the bellows; on any other iPhone or iPad you drag an on-screen bellows strip instead.</p>
+    <h3>Highlights</h3>
+    <ul>
+      <li>Ten melody buttons on two thumb-reach arcs, chord buttons in circle-of-fifths order</li>
+      <li>Real-time free-reed synthesis: bellows pressure shapes attack, brightness and breath</li>
+      <li>Guided songs with lit buttons; record and listen back (no microphone)</li>
+    </ul>
+    <h3>Pricing</h3>
+    <p>The instrument is free with no time limit. Jabara Pro (one-time purchase) unlocks all ten chords, 7ths and the ♯ shift, three more timbres, all eight songs, transposition to twelve keys, and sharing recordings.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data and works fully offline. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
