@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yobinami — iPhoneから標準電波を送って、電波時計を合わせる。</title>
+<meta name="description" content="iPhoneから標準電波を送って、電波時計を合わせる。">
+<style>
+  :root{
+    --paper:#FBF6EE; --card:#FFFFFF; --ink:#23262B; --muted:#6B6258;
+    --accent:#D8351F; --line:rgba(216,53,31,.16);
+    --font:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.75;
+    background-image:linear-gradient(180deg,#FDFBF6,#F6EEE1);min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 64px}
+  a{color:var(--accent)}
+  .lang{display:flex;gap:14px;justify-content:flex-end;font-size:14px;font-weight:700}
+  header.hero{text-align:center;padding:40px 0 26px}
+  .icon{width:108px;height:108px;border-radius:24px;box-shadow:0 14px 30px rgba(120,60,30,.22);display:block;margin:0 auto 18px}
+  h1{font-size:34px;letter-spacing:.5px}
+  .tag{color:var(--muted);font-size:17px;margin-top:8px}
+  .cta{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:800;padding:13px 26px;border-radius:100px;box-shadow:0 12px 28px rgba(216,53,31,.28)}
+  section{margin-top:40px}
+  h2{font-size:22px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+    box-shadow:0 8px 20px rgba(120,60,30,.06)}
+  .card .t{font-weight:800;font-size:16px}
+  .card .d{color:var(--muted);font-size:14px;margin-top:4px}
+  ol.steps{counter-reset:s;list-style:none;display:grid;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px 14px 56px;position:relative}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none}
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{margin:0 8px}
+  h3{font-size:18px;margin:22px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="#ja">日本語</a><a href="#en">English</a></div>
+
+  <header class="hero" id="ja">
+    <img class="icon" src="icon.png" alt="Yobinami">
+    <h1>Yobinami</h1>
+    <div class="tag">iPhoneから標準電波を送って、電波時計を合わせる。</div>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </header>
+
+  <section>
+    <p>ヨビナミは、iPhone のスピーカーから標準電波と同じ信号を再現して、電波時計の時刻を合わせるアプリです。電波が届きにくい場所でも、時計を iPhone に近づけるだけで受信を試せます。</p>
+  </section>
+
+  <section>
+    <h2>主な特長</h2>
+    <div class="grid">
+      <div class="card"><div class="t">iPhone から時刻信号を送信</div><div class="d">時計のホームシティに合わせた信号を再現します</div></div>
+      <div class="card"><div class="t">正確な時刻で送信</div><div class="d">Apple の時刻サーバーで端末の時計のずれを補正します</div></div>
+      <div class="card"><div class="t">受信手順をアプリ内でご案内</div><div class="d">時計の強制受信の操作を画面で確認できます</div></div>
+      <div class="card"><div class="t">うまくいかないときの手順つき</div><div class="d">置き方や音量など、順番に見直せます</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>時計のホームシティの地域を選ぶ</li>
+      <li>送信を開始して、時計を iPhone 下端の右側（スピーカーのある側）にぴったり寄せて置く</li>
+      <li>時計側で強制受信の操作をする</li>
+    </ol>
+    <p style="margin-top:12px">現在対応している電波は JJY（日本、40kHz / 60kHz）です。置き時計・掛け時計で受信を確認しています。腕時計は置き方しだいで合います。</p>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>時計が合った回は<strong>3回まで無料</strong>、以降は Pro（買い切り）でご利用いただけます。</p>
+  </section>
+
+  <section>
+    <h2>プライバシー</h2>
+    <div class="note">本アプリは個人情報を<strong>収集しません</strong>。時刻補正のため Apple の時刻サーバー（time.apple.com）に時刻の問い合わせ（NTP）のみ行い、個人情報や端末識別子は送信しません。詳しくは <a href="privacy.html">プライバシーポリシー</a> をご覧ください。</div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ・サポート</h2>
+    <p>ご質問・ご要望・不具合報告は、お問い合わせフォームよりお寄せください。</p>
+    <p style="margin-top:10px"><a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">📨 お問い合わせフォームを開く</a></p>
+  </section>
+
+  <hr style="margin:48px 0;border:none;border-top:1px solid var(--line)">
+
+  <header id="en">
+    <h1 style="font-size:28px">Yobinami</h1>
+    <div class="tag">Send a time signal from your iPhone to set your radio-controlled watch.</div>
+  </header>
+  <section>
+    <p>Yobinami plays the same kind of signal a standard-time radio station broadcasts through your iPhone's speaker, so you can set a radio-controlled watch even where reception is poor. Just hold the watch near your iPhone.</p>
+    <h3>How to use</h3>
+    <ol class="steps">
+      <li>Choose the region of your watch's home city</li>
+      <li>Start sending and place the watch right against the right side of the iPhone's bottom edge, where the speaker is</li>
+      <li>Force a reception on the watch</li>
+    </ol>
+    <p style="margin-top:12px">Supported station right now: JJY (Japan, 40 kHz / 60 kHz). Reception is confirmed on desk and wall clocks; wristwatches depend on placement.</p>
+    <h3>Pricing</h3>
+    <p>The first 3 successful syncs are free; after that, Pro is a one-time purchase.</p>
+    <h3>Privacy</h3>
+    <p>The app collects no personal data. It only queries Apple's time server (time.apple.com) over NTP to correct the clock, and sends no personal information or device identifiers. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    <h3>Contact</h3>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">Open the contact form</a></p>
+  </section>
+
+  <footer>
+    <div><a href="privacy.html">プライバシーポリシー / Privacy</a> ·
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclJvZ8K6o9dhGikZdl5Q3rUEl38eMvg12mErrJnZo1JvGYPg/viewform?usp=dialog">お問い合わせ / Contact</a></div>
+    <!-- TODO: 販売者名義に差し替え -->
+    <div style="margin-top:8px">© 2026 shuheilocale</div>
+  </footer>
+</div>
+</body>
+</html>
